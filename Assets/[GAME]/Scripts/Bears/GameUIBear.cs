@@ -3,8 +3,11 @@
 #endregion
 
 
+using System;
 using _GAME_.Scripts.GlobalVariables;
+using _ORANGEBEAR_.EventSystem;
 using _ORANGEBEAR_.Scripts.Bears;
+using _ORANGEBEAR_.Scripts.Managers;
 using TMPro;
 using UnityEngine;
 

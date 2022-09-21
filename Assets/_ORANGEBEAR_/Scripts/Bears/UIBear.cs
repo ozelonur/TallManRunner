@@ -73,7 +73,7 @@ namespace _ORANGEBEAR_.Scripts.Bears
             }
         }
 
-        private void InitLevel(object[] args)
+        protected virtual void InitLevel(object[] args)
         {
             Activate(mainMenuPanel);
         }

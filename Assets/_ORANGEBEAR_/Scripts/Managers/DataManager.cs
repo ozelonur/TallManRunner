@@ -45,19 +45,39 @@ namespace _ORANGEBEAR_.Scripts.Managers
 
         #endregion
 
+        #region Event Methods
+
+        protected override void CheckRoarings(bool status)
+        {
+            if (status)
+            {
+                Register(GameEvents.InitLevel, InitLevel);
+            }
+
+            else
+            {
+                UnRegister(GameEvents.InitLevel, InitLevel);
+            }
+        }
+
+        private void InitLevel(object[] args)
+        {
+            Roar(CustomEvents.UpdateCurrency, DiamondCount);
+        }
+
+        #endregion
+
         #region Public Methods
 
         public void AddDiamond(int amount)
         {
             DiamondCount += amount;
-            print("Diamond Count: " + DiamondCount);
             Roar(CustomEvents.UpdateCurrency, DiamondCount);
         }
         
         public void SubtractDiamond(int amount)
         {
             DiamondCount -= amount;
-            print("Diamond Count: " + DiamondCount);
             Roar(CustomEvents.UpdateCurrency, DiamondCount);
         }
 
