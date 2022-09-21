@@ -357,6 +357,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7f2f4bde46fa4e0c98cf238791a16093, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pathCreator: {fileID: 1499841574785628457}
+  followTarget: {fileID: 7880359451725194642}
+  endOfPathInstruction: 2
+  maximumStackLimit: 0
 --- !u!1001 &8553668403361949984
 PrefabInstance:
   m_ObjectHideFlags: 0
