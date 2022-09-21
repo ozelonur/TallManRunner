@@ -6,12 +6,24 @@
 
 using _GAME_.Scripts.Enums;
 using _GAME_.Scripts.GlobalVariables;
+using _GAME_.Scripts.Interfaces;
 using _ORANGEBEAR_.EventSystem;
+using UnityEngine;
 
 namespace _GAME_.Scripts.Bears.Player
 {
     public class PlayerBear : Bear
     {
+
+        #region MonoBehaviour Methods
+
+        private void OnTriggerEnter(Collider other)
+        {
+            other.GetComponent<ICollectable>()?.Collect();
+        }
+
+        #endregion
+        
         #region Event Methods
 
         protected override void CheckRoarings(bool status)

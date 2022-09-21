@@ -21,5 +21,6 @@ namespace _GAME_.Scripts.GlobalVariables
         public const string GetFollowTarget = nameof(GetFollowTarget);
         public const string GetMaximumStackCount = nameof(GetMaximumStackCount);
         public const string ShakeCamera = nameof(ShakeCamera);
+        public const string UpdateCurrency = nameof(UpdateCurrency);
     }
 }
