@@ -11,7 +11,8 @@ namespace _GAME_.Scripts.Interfaces
         #region Properties
 
         public GateType gateType { get; set; }
-        public bool Worth { get; set; }
+        public DirectionType DirectionType { get; set; }
+        public float Worth { get; set; }
 
         #endregion
 

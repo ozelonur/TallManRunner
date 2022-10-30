@@ -5,13 +5,10 @@
 #endregion
 
 using System;
-using _GAME_.Scripts.Enums;
 using _GAME_.Scripts.GlobalVariables;
 using _GAME_.Scripts.ScriptableObjects;
 using _ORANGEBEAR_.EventSystem;
-using DG.Tweening;
 using UnityEngine;
-using CameraType = _GAME_.Scripts.Enums.CameraType;
 
 namespace _GAME_.Scripts.Bears
 {
@@ -69,8 +66,6 @@ namespace _GAME_.Scripts.Bears
 
         #endregion
 
-        private Camera _camera;
-
         #region MonoBehaviour Methods
 
         private void Awake()
@@ -83,8 +78,6 @@ namespace _GAME_.Scripts.Bears
             _rotationSpeed = movementSettings.RotationSpeed;
             _rotationPower = movementSettings.RotationPower;
             _rotationClampRange = movementSettings.RotationClampRange;
-
-            _camera = Camera.main;
         }
 
         private void Start()
@@ -138,12 +131,6 @@ namespace _GAME_.Scripts.Bears
         private void OnFinishLine(object[] args)
         {
             _canMove = false;
-
-            transform.DOLocalMove(Vector3.forward * 5, .5f)
-                .OnStart(() => Roar(CustomEvents.PlayPlayerAnimation, AnimationType.Run))
-                .OnComplete(LookAtTheCamera)
-                .SetEase(Ease.Linear)
-                .SetLink(gameObject);
         }
 
         private void CanMoveHorizontal(object[] obj)
@@ -201,24 +188,6 @@ namespace _GAME_.Scripts.Bears
                 30 * Time.fixedDeltaTime);
 
             positionPivot.localPosition = localPosition;
-        }
-
-        private void LookAtTheCamera()
-        {
-            Vector3 lookPos = _camera.transform.position;
-            lookPos.y = 0;
-
-            Roar(CustomEvents.PlayPlayerAnimation, AnimationType.Idle);
-
-            transform.DOLookAt(lookPos, .5f)
-                .OnComplete(() =>
-                {
-                    Roar(CustomEvents.SwitchCamera, CameraType.Finish);
-                    Roar(CustomEvents.PlayPlayerAnimation, AnimationType.Dance);
-                    DOVirtual.DelayedCall(2f, () => Roar(GameEvents.OnGameComplete, true));
-                })
-                .SetEase(Ease.Linear)
-                .SetLink(gameObject);
         }
 
         #endregion

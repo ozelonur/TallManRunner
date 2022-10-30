@@ -17,8 +17,8 @@ namespace _GAME_.Scripts.Managers
 
         #region Serialized Fields
 
-        [Header("Materials")] [SerializeField] private Material positiveGateMaterial;
-        [SerializeField] private Material negativeGateMaterial;
+        [Header("Materials")] public Material positiveGateMaterial;
+        public Material negativeGateMaterial;
 
         #endregion
 

@@ -13,16 +13,7 @@ namespace _GAME_.Scripts.Bears.Player
     {
         #region Private Variables
         
-        private Animator _animator;
-
-        #endregion
-
-        #region MonoBehaviour Methods
-
-        private void Awake()
-        {
-            _animator = GetComponent<Animator>();
-        }
+        public Animator animator;
 
         #endregion
 
@@ -30,7 +21,7 @@ namespace _GAME_.Scripts.Bears.Player
 
         public void PlayAnimation(AnimationType animationType)
         {
-            ((IAnimator) this).SetAnimation(_animator, animationType);
+            ((IAnimator) this).SetAnimation(animator, animationType);
         }
 
         #endregion
