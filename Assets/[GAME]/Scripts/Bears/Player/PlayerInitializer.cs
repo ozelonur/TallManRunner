@@ -2,7 +2,7 @@
 // Developed by Onur ÖZEL
 #endregion
 
-using System;
+using _GAME_.Scripts.GlobalVariables;
 using _ORANGEBEAR_.EventSystem;
 using _ORANGEBEAR_.Scripts.Managers;
 using UnityEngine;
@@ -22,6 +22,7 @@ namespace _GAME_.Scripts.Bears.Player
 
         private PlayerBear _playerBear;
         private PlayerAnimateBear _playerAnimateBear;
+        private GameObject _tempCharacter;
 
         #endregion
 
@@ -34,15 +35,42 @@ namespace _GAME_.Scripts.Bears.Player
 
         #endregion
 
-        #region Public Methods
+        #region Event Methods
 
-        public void Initialize()
+        protected override void CheckRoarings(bool status)
+        {
+            if (status)
+            {
+                Register(CustomEvents.SwitchCharacter, SwitchCharacter);
+            }
+
+            else
+            {
+                UnRegister(CustomEvents.SwitchCamera, SwitchCharacter);
+            }
+        }
+
+        private void SwitchCharacter(object[] args)
+        {
+            Initialize();
+        }
+
+        #endregion
+
+        #region Private Methods
+
+        private void Initialize()
         {
             _playerBear = GetComponent<PlayerBear>();
             _playerAnimateBear = GetComponent<PlayerAnimateBear>();
+
+            if (_tempCharacter != null)
+            {
+                Destroy(_tempCharacter);
+            }
             
-            GameObject character = Instantiate(DataManager.Instance.GetCurrentCharacter().Model, modelParent);
-            Animator animator = character.AddComponent<Animator>();
+            _tempCharacter = Instantiate(DataManager.Instance.GetCurrentCharacter().Model, modelParent);
+            Animator animator = _tempCharacter.AddComponent<Animator>();
             animator.runtimeAnimatorController = _playerBear.CharacterData.Animator;
             
             _playerAnimateBear.animator = animator;

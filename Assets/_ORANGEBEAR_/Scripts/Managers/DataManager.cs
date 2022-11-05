@@ -19,6 +19,12 @@ namespace _ORANGEBEAR_.Scripts.Managers
 
         #endregion
 
+        #region Serialized Fields
+
+        [SerializeField] private int initialDiamondsCount = 100;
+
+        #endregion
+
         #region Datas
 
         public int DiamondCount
@@ -26,6 +32,8 @@ namespace _ORANGEBEAR_.Scripts.Managers
             get => PlayerPrefs.GetInt("DiamondCount", 0);
             set => PlayerPrefs.SetInt("DiamondCount", value);
         }
+
+        public int levelDiamondCount;
         
         public int CurrentCharacterIndex
         {
@@ -38,12 +46,6 @@ namespace _ORANGEBEAR_.Scripts.Managers
         #region Public Variables
 
         public CharacterData[] CharacterDatas;
-
-        #endregion
-
-        #region Private Variables
-
-        private int _currentIndex;
 
         #endregion
 
@@ -60,6 +62,11 @@ namespace _ORANGEBEAR_.Scripts.Managers
             {
                 Destroy(gameObject);
             }
+            
+            SaveData();
+            LoadData();
+            
+            AddDiamond(initialDiamondsCount);
         }
 
         #endregion
@@ -81,6 +88,7 @@ namespace _ORANGEBEAR_.Scripts.Managers
 
         private void InitLevel(object[] args)
         {
+            levelDiamondCount = 0;
             Roar(CustomEvents.UpdateCurrency, DiamondCount);
         }
 
@@ -102,7 +110,6 @@ namespace _ORANGEBEAR_.Scripts.Managers
         
         public CharacterData GetCharacterData(int index)
         {
-            _currentIndex = index;
             CurrentCharacterIndex = index;
             return CharacterDatas[index];
         }

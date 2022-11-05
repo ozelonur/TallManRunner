@@ -17,6 +17,7 @@ namespace _GAME_.Scripts.Bears
 
         public void Collect(params object[] args)
         {
+            DataManager.Instance.levelDiamondCount += Worth;
             DataManager.Instance.AddDiamond(Worth);
             Destroy(gameObject);
         }

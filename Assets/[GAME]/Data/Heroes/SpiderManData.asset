@@ -16,3 +16,5 @@ MonoBehaviour:
   Unlocked: 1
   Model: {fileID: 919132149155446097, guid: 9e73d05eb2e85174bbd35ff7d7196cb9, type: 3}
   Animator: {fileID: 9100000, guid: c7de14d2581ff0e4a922f5b7e4935530, type: 2}
+  CharacterName: SPIDERMAN
+  heroSprite: {fileID: 21300000, guid: 2ba51eb94933e1948b7bdc01706810d7, type: 3}

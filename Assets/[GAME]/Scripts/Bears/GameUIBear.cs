@@ -5,10 +5,14 @@
 #endregion
 
 
+using System.Collections;
 using _GAME_.Scripts.Datas;
 using _GAME_.Scripts.GlobalVariables;
+using _GAME_.Scripts.Managers;
+using _ORANGEBEAR_.EventSystem;
 using _ORANGEBEAR_.Scripts.Bears;
 using _ORANGEBEAR_.Scripts.Managers;
+using DG.Tweening;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -20,6 +24,7 @@ namespace _GAME_.Scripts.Bears
         #region Serialized Fields
 
         [SerializeField] private TMP_Text currencyText;
+        [SerializeField] private TMP_Text earnedDiamondText;
 
         [Header("Shop Panel")] [SerializeField]
         private GameObject garagePanel;
@@ -35,11 +40,18 @@ namespace _GAME_.Scripts.Bears
         [SerializeField] private GameObject lockImage;
         [SerializeField] private TMP_Text buyButtonText;
 
+        [Header("Main Menu")] [SerializeField] private Image currentCharacterImage;
+        
+        [Header("Settings Menu")]
+        
+        [SerializeField] private Button settingsButton;
+
         #endregion
 
         #region Private Variables
 
         private int _index;
+        private int _earnedDiamonds;
 
         #endregion
 
@@ -59,6 +71,28 @@ namespace _GAME_.Scripts.Bears
             garagePanel.SetActive(false);
 
             #endregion
+
+            #region Settings
+
+            settingsButton.onClick.AddListener(OnSettingsButtonClicked);
+
+            #endregion
+        }
+
+        private void OnSettingsButtonClicked()
+        {
+            AnimationManager.Instance.PlaySettingsButtonAnimation();
+        }
+
+        private void Start()
+        {
+            StartCoroutine(WaitOneFrame());
+
+            IEnumerator WaitOneFrame()
+            {
+                yield return null;
+                currentCharacterImage.sprite = DataManager.Instance.GetCurrentCharacter().heroSprite;
+            }
         }
 
         private void OnClickBuy()
@@ -66,7 +100,6 @@ namespace _GAME_.Scripts.Bears
             if (DataManager.Instance.CharacterDatas[_index].Unlocked)
             {
                 Roar(CustomEvents.SwitchCharacter);
-                OnCloseShopButtonClicked();
                 return;
             }
 
@@ -105,7 +138,7 @@ namespace _GAME_.Scripts.Bears
             _index++;
 
             previousButton.gameObject.SetActive(_index > 0);
-            nextCharacterButton.gameObject.SetActive(_index < 9);
+            nextCharacterButton.gameObject.SetActive(_index < 4);
 
             GetCharacterData();
         }
@@ -126,7 +159,7 @@ namespace _GAME_.Scripts.Bears
                     previousButton.gameObject.SetActive(false);
                     nextCharacterButton.gameObject.SetActive(true);
                     break;
-                case > 9:
+                case > 4:
                     previousButton.gameObject.SetActive(true);
                     nextCharacterButton.gameObject.SetActive(false);
                     break;
@@ -146,17 +179,42 @@ namespace _GAME_.Scripts.Bears
             if (status)
             {
                 Register(CustomEvents.UpdateCurrency, UpdateCurrency);
+                Register(CustomEvents.SwitchCharacter, SwitchCharacter);
+                Register(GameEvents.OnGameComplete, OnGameComplete);
             }
 
             else
             {
                 UnRegister(CustomEvents.UpdateCurrency, UpdateCurrency);
+                UnRegister(CustomEvents.SwitchCharacter, SwitchCharacter);
+                UnRegister(GameEvents.OnGameComplete, OnGameComplete);
             }
+        }
+
+        private void OnGameComplete(object[] args)
+        {
+            _earnedDiamonds = DataManager.Instance.levelDiamondCount;
+            
+            int currentCount = 0;
+
+            DOTween.To(() => currentCount, count1 => currentCount = count1, _earnedDiamonds, 1f).OnUpdate(() =>
+            {
+                earnedDiamondText.text = "+" + currentCount;
+                if (Time.frameCount % 10 == 0)
+                {
+                    AudioManager.Instance.PlayCoinCollectSound();
+                }
+            });
+        }
+
+        private void SwitchCharacter(object[] args)
+        {
+            currentCharacterImage.sprite = DataManager.Instance.GetCurrentCharacter().heroSprite;
         }
 
         private void UpdateCurrency(object[] args)
         {
-            currencyText.text = args[0].ToString();
+            currencyText.text = "<sprite=0>" + (int)args[0];
         }
 
         #endregion
@@ -168,19 +226,27 @@ namespace _GAME_.Scripts.Bears
             CharacterData characterData = DataManager.Instance.GetCharacterData(_index);
 
             heroNameText.text = characterData.CharacterName;
-            heroPriceText.text = characterData.Price.ToString();
             heroImage.sprite = characterData.heroSprite;
-            heroPriceText.gameObject.SetActive(!characterData.Unlocked);
+            
+            if (characterData.Unlocked)
+            {
+                heroPriceText.text = "UNLOCKED";
+            }
+            else
+            {
+                heroPriceText.text = "<sprite=0>" + characterData.Price;
+            }
+
             lockImage.SetActive(!characterData.Unlocked);
 
-            buyButtonText.text = characterData.Unlocked ? "PLAY" : "USE";
+            buyButtonText.text = characterData.Unlocked ? "USE" : "BUY";
         }
 
         private void Unlock()
         {
             DataManager.Instance.CharacterDatas[_index].Unlocked = true;
             GetCharacterData();
-            
+
             DataManager.Instance.SaveData();
         }
 
