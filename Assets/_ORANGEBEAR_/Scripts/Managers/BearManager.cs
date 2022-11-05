@@ -33,6 +33,8 @@ namespace _ORANGEBEAR_.Scripts.Managers
             {
                 Instance = this;
             }
+            
+            Application.targetFrameRate = 60;
         }
 
         #endregion
