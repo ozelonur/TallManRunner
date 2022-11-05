@@ -96,6 +96,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CharacterData: {fileID: 11400000, guid: b50dd89408faa27469358a203c21a74e, type: 2}
+  playerModel: {fileID: 7085925026559087087}
 --- !u!114 &7240164566798100509
 MonoBehaviour:
   m_ObjectHideFlags: 0

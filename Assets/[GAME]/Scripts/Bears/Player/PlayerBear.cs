@@ -20,6 +20,7 @@ namespace _GAME_.Scripts.Bears.Player
         #region Public Variables
 
         public CharacterData CharacterData;
+        public Transform playerModel;
 
         #endregion
 
@@ -69,9 +70,9 @@ namespace _GAME_.Scripts.Bears.Player
         {
             if (!finishStatus)
             {
-                if ((transform.localScale.x < .3f && scale.x > 0) || (transform.localScale.y < .3f && scale.y > 0))
+                if ((playerModel.localScale.x < .3f && scale.x > 0) || (playerModel.localScale.y < .3f && scale.y > 0))
                 {
-                    transform.DOScale(Vector3.zero, .3f).SetEase(Ease.InBack)
+                    playerModel.DOScale(Vector3.zero, .3f).SetEase(Ease.InBack)
                         .OnComplete(() => Roar(GameEvents.OnGameComplete, false))
                         .SetLink(gameObject);
                     return;
@@ -79,7 +80,7 @@ namespace _GAME_.Scripts.Bears.Player
             }
 
 
-            transform.DOScale(transform.localScale + scale, 0.5f).SetEase(Ease.OutBack).SetLink(gameObject);
+            playerModel.DOScale(playerModel.localScale + scale, 0.5f).SetEase(Ease.OutBack).SetLink(gameObject);
         }
 
         #endregion

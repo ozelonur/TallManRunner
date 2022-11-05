@@ -22,6 +22,7 @@ namespace _GAME_.Scripts.Bears
         [SerializeField] private Renderer[] multipliers;
         [SerializeField] private ParticleSystem[] particles;
         [SerializeField] private ParticleSystem explosionParticle;
+        [SerializeField] private ParticleSystem woodParticle;
         [SerializeField] private Color color;
 
         #endregion
@@ -68,7 +69,7 @@ namespace _GAME_.Scripts.Bears
 
         public void HitToFinishPart(params object[] args)
         {
-            if (_playerBear.transform.localScale.x < .3f || _playerBear.transform.localScale.y < .3f)
+            if (_playerBear.playerModel.localScale.x < .3f || _playerBear.playerModel.localScale.y < .3f)
             {
                Roar(CustomEvents.PlayerFinishMovement, false);
                 _playerBear.transform.DOScale(Vector3.zero, .3f)
@@ -77,7 +78,8 @@ namespace _GAME_.Scripts.Bears
                     .SetLink(_playerBear.gameObject);
                 return;
             }
-
+            
+            woodParticle.Play();
             barrier.DOScale(Vector3.zero, .15f).SetEase(Ease.InBack).SetLink(barrier.gameObject);
             _playerBear.Scale(new Vector3(-.05f, -.05f, -.05f), true);
             explosionParticle.Play();
