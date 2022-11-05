@@ -2,7 +2,9 @@
 // Developed by Onur ÖZEL
 #endregion
 
+using System;
 using _ORANGEBEAR_.EventSystem;
+using _ORANGEBEAR_.Scripts.Managers;
 using UnityEngine;
 
 namespace _GAME_.Scripts.Bears.Player
@@ -25,12 +27,21 @@ namespace _GAME_.Scripts.Bears.Player
 
         #region MonoBehaviour Methods
 
-        private void Awake()
+        private void Start()
+        {
+            Initialize();
+        }
+
+        #endregion
+
+        #region Public Methods
+
+        public void Initialize()
         {
             _playerBear = GetComponent<PlayerBear>();
             _playerAnimateBear = GetComponent<PlayerAnimateBear>();
             
-            GameObject character = Instantiate(_playerBear.CharacterData.Model, modelParent);
+            GameObject character = Instantiate(DataManager.Instance.GetCurrentCharacter().Model, modelParent);
             Animator animator = character.AddComponent<Animator>();
             animator.runtimeAnimatorController = _playerBear.CharacterData.Animator;
             

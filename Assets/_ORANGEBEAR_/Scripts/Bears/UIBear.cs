@@ -43,7 +43,7 @@ namespace _ORANGEBEAR_.Scripts.Bears
 
         #region MonoBehaviour Methods
 
-        private void Awake()
+        protected virtual void Awake()
         {
             startButton.onClick.AddListener(StartGame);
             retryButton.onClick.AddListener(NextLevel);

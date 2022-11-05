@@ -24,5 +24,8 @@ namespace _GAME_.Scripts.GlobalVariables
         public const string UpdateCurrency = nameof(UpdateCurrency);
         public const string PlayerOnFinish = nameof(PlayerOnFinish);
         public const string PlayerFinishMovement = nameof(PlayerFinishMovement);
+        
+        public const string ShowCurrency = nameof(ShowCurrency);
+        public const string SwitchCharacter = nameof(SwitchCharacter);
     }
 }

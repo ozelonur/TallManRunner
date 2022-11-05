@@ -21,6 +21,7 @@ namespace _GAME_.Scripts.Bears.Player
 
         public CharacterData CharacterData;
         public Transform playerModel;
+        public PlayerInitializer playerInitializer;
 
         #endregion
 

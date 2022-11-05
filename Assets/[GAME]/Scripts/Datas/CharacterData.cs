@@ -14,5 +14,7 @@ namespace _GAME_.Scripts.Datas
         public bool Unlocked;
         public GameObject Model;
         public AnimatorController Animator;
+        public string CharacterName;
+        public Sprite heroSprite;
     }
 }
