@@ -6,6 +6,7 @@
 
 using _GAME_.Scripts.Bears.Player;
 using _GAME_.Scripts.Enums;
+using _GAME_.Scripts.GlobalVariables;
 using _GAME_.Scripts.Interfaces;
 using _GAME_.Scripts.Managers;
 using _ORANGEBEAR_.EventSystem;
@@ -85,10 +86,10 @@ namespace _GAME_.Scripts.Bears.Gate
             switch (DirectionType)
             {
                 case DirectionType.Vertical:
-                    scaleAmount = Vector3.up * (Worth / 50f);
+                    scaleAmount = Vector3.up * (Worth / 100f);
                     break;
                 case DirectionType.Horizontal:
-                    scaleAmount = Vector3.right * (Worth / 50f);
+                    scaleAmount = Vector3.right * (Worth / 100f);
                     break;
                 default:
                     Debug.LogWarning("Direction Type is not defined");
@@ -96,6 +97,16 @@ namespace _GAME_.Scripts.Bears.Gate
             }
             
             playerBear.Scale(scaleAmount);
+
+            if (Worth > 0)
+            {
+                Roar(CustomEvents.GiveInfo, $"{Worth} Growth", true);
+            }
+
+            else
+            {
+                Roar(CustomEvents.GiveInfo, $"{Worth} Shrink", false);
+            }
         }
 
         #region Private Methods

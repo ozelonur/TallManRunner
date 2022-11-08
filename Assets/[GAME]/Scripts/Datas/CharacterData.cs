@@ -2,7 +2,6 @@
 // Developed by Onur ÖZEL
 #endregion
 
-using UnityEditor.Animations;
 using UnityEngine;
 
 namespace _GAME_.Scripts.Datas
@@ -13,7 +12,7 @@ namespace _GAME_.Scripts.Datas
         public int Price;
         public bool Unlocked;
         public GameObject Model;
-        public AnimatorController Animator;
+        public RuntimeAnimatorController Animator;
         public string CharacterName;
         public Sprite heroSprite;
     }

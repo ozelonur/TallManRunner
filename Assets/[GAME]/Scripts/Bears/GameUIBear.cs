@@ -7,6 +7,7 @@
 
 using System.Collections;
 using _GAME_.Scripts.Datas;
+using _GAME_.Scripts.Extensions;
 using _GAME_.Scripts.GlobalVariables;
 using _GAME_.Scripts.Managers;
 using _ORANGEBEAR_.EventSystem;
@@ -45,6 +46,21 @@ namespace _GAME_.Scripts.Bears
         [Header("Settings Menu")]
         
         [SerializeField] private Button settingsButton;
+        
+        [Header("Info Text")]
+        [SerializeField] private TMP_Text infoText;
+
+        [SerializeField] private Color trueColor;
+        [SerializeField] private Color falseColor;
+        
+        #endregion
+
+        #region Ads
+
+        [Header("Ads")] [SerializeField]
+        private Button watchAdsButton;
+
+        [SerializeField] private Button claimButton;
 
         #endregion
 
@@ -77,6 +93,35 @@ namespace _GAME_.Scripts.Bears
             settingsButton.onClick.AddListener(OnSettingsButtonClicked);
 
             #endregion
+
+            #region Ads
+
+            watchAdsButton.onClick.AddListener(OnWatchAdsButtonClicked);
+            claimButton.onClick.AddListener(OnClaimButtonClicked);
+
+            #endregion
+            
+            infoText.transform.localScale = Vector3.zero;
+        }
+
+        private void OnClaimButtonClicked()
+        {
+            Advertisements.Instance.ShowRewardedVideo(DiamondClaimed);
+        }
+
+        private void DiamondClaimed(bool arg0)
+        {
+            DataManager.Instance.AddDiamond((_earnedDiamonds * 5) - _earnedDiamonds);
+        }
+
+        private void OnWatchAdsButtonClicked()
+        {
+            Advertisements.Instance.ShowRewardedVideo(DiamondRewarded);
+        }
+
+        private void DiamondRewarded(bool arg0)
+        {
+            DataManager.Instance.AddDiamond(50);
         }
 
         private void OnSettingsButtonClicked()
@@ -181,6 +226,7 @@ namespace _GAME_.Scripts.Bears
                 Register(CustomEvents.UpdateCurrency, UpdateCurrency);
                 Register(CustomEvents.SwitchCharacter, SwitchCharacter);
                 Register(GameEvents.OnGameComplete, OnGameComplete);
+                Register(CustomEvents.GiveInfo, GiveInfo);
             }
 
             else
@@ -188,11 +234,30 @@ namespace _GAME_.Scripts.Bears
                 UnRegister(CustomEvents.UpdateCurrency, UpdateCurrency);
                 UnRegister(CustomEvents.SwitchCharacter, SwitchCharacter);
                 UnRegister(GameEvents.OnGameComplete, OnGameComplete);
+                UnRegister(CustomEvents.GiveInfo, GiveInfo);
             }
+        }
+
+        private void GiveInfo(object[] args)
+        {
+            bool status = (bool) args[1];
+            infoText.text = (string) args[0];
+            infoText.color = status ? trueColor : falseColor;
+            
+            infoText.transform.DOScale(Vector3.one, 0.2f).SetEase(Ease.OutBack).OnComplete(() =>
+            {
+                infoText.transform.DOScale(Vector3.zero, 0.2f).SetEase(Ease.InBack).SetDelay(.2f);
+            });
         }
 
         private void OnGameComplete(object[] args)
         {
+            bool status = (bool) args[0];
+            Advertisements.Instance.ShowInterstitial();
+            if (!status)
+            {
+                return;
+            }
             _earnedDiamonds = DataManager.Instance.levelDiamondCount;
             
             int currentCount = 0;
@@ -214,7 +279,7 @@ namespace _GAME_.Scripts.Bears
 
         private void UpdateCurrency(object[] args)
         {
-            currencyText.text = "<sprite=0>" + (int)args[0];
+            currencyText.text = "<sprite=0>" + ((int)args[0]).WithSuffix();
         }
 
         #endregion
@@ -234,7 +299,7 @@ namespace _GAME_.Scripts.Bears
             }
             else
             {
-                heroPriceText.text = "<sprite=0>" + characterData.Price;
+                heroPriceText.text = "<sprite=0>" + characterData.Price.WithSuffix();
             }
 
             lockImage.SetActive(!characterData.Unlocked);

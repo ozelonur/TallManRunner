@@ -37,6 +37,7 @@ namespace _GAME_.Scripts.Bears.Player
             other.GetComponent<ICollectable>()?.Collect();
             other.GetComponent<IGate>()?.HitToGate(this);
             other.GetComponent<IFinishPart>()?.HitToFinishPart(this);
+            other.GetComponent<IObstacle>()?.HitToObstacle(this);
         }
 
         #endregion
@@ -69,15 +70,22 @@ namespace _GAME_.Scripts.Bears.Player
 
         public void Scale(Vector3 scale, bool finishStatus = false)
         {
-            if (!finishStatus)
+            if (scale.x > 0 || scale.y > 0)
             {
-                if ((playerModel.localScale.x < .3f && scale.x > 0) || (playerModel.localScale.y < .3f && scale.y > 0))
-                {
-                    playerModel.DOScale(Vector3.zero, .3f).SetEase(Ease.InBack)
-                        .OnComplete(() => Roar(GameEvents.OnGameComplete, false))
-                        .SetLink(gameObject);
-                    return;
-                }
+                AudioManager.Instance.PlayBrickCollectSound();
+            }
+
+            else
+            {
+                AudioManager.Instance.PlayMakeStairSound();
+            }
+            
+            if ((playerModel.localScale.x < .3f && scale.x < 0) || (playerModel.localScale.y < .3f && scale.y < 0))
+            {
+                playerModel.DOScale(Vector3.zero, .3f).SetEase(Ease.InBack)
+                    .OnComplete(() => Roar(GameEvents.OnGameComplete, false))
+                    .SetLink(gameObject);
+                return;
             }
 
 

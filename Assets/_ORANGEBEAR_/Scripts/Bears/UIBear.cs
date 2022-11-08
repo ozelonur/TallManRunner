@@ -30,6 +30,8 @@ namespace _ORANGEBEAR_.Scripts.Bears
         [Header("Buttons")] [SerializeField] private Button startButton;
         [SerializeField] private Button retryButton;
         [SerializeField] private Button nextButton;
+        [SerializeField] private Button tapToPlayButton;
+        [SerializeField] private TMP_Text tapToPlayText;
 
         #endregion
 
@@ -45,11 +47,19 @@ namespace _ORANGEBEAR_.Scripts.Bears
 
         protected virtual void Awake()
         {
+            tapToPlayText.enabled = true;
             startButton.onClick.AddListener(StartGame);
             retryButton.onClick.AddListener(NextLevel);
             nextButton.onClick.AddListener(NextLevel);
+            tapToPlayButton.onClick.AddListener(TapToPlay);
 
             Activate(mainMenuPanel);
+        }
+
+        private void TapToPlay()
+        {
+            Roar(GameEvents.OnGameStart);
+            tapToPlayText.enabled = false;
         }
 
         #endregion
@@ -120,7 +130,6 @@ namespace _ORANGEBEAR_.Scripts.Bears
         private void StartGame()
         {
             Activate(gamePanel);
-            Roar(GameEvents.OnGameStart);
         }
 
         private void Activate(GameObject panel)

@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9b07d3b06b874900991a3a017369089f, type: 3}
   m_Name: IronManData
   m_EditorClassIdentifier: 
-  Price: 2000
+  Price: 200
   Unlocked: 0
   Model: {fileID: 919132149155446097, guid: 7ef461d7e2cef1d4da70d52aeba1be98, type: 3}
   Animator: {fileID: 9100000, guid: 3094884ab4a041f4ba4ab6bbb1690fe2, type: 2}

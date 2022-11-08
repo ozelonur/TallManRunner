@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9b07d3b06b874900991a3a017369089f, type: 3}
   m_Name: DareDevilData
   m_EditorClassIdentifier: 
-  Price: 4000
+  Price: 1000
   Unlocked: 0
   Model: {fileID: 919132149155446097, guid: 6690b725d6ed6b34f85b2dba07ce37a1, type: 3}
   Animator: {fileID: 9100000, guid: 6dd0cc94c6be8fd4b93513ffe0353a0f, type: 2}

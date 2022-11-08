@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9b07d3b06b874900991a3a017369089f, type: 3}
   m_Name: CaptanAmericaData
   m_EditorClassIdentifier: 
-  Price: 4000
+  Price: 500
   Unlocked: 0
   Model: {fileID: 919132149155446097, guid: 7401d9fbb78e7634fbaeabb9dcacd424, type: 3}
   Animator: {fileID: 9100000, guid: d12942b048896a447945a2af1dd4399d, type: 2}
