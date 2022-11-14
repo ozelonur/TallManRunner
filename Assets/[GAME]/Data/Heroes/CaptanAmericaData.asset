@@ -17,4 +17,4 @@ MonoBehaviour:
   Model: {fileID: 919132149155446097, guid: 7401d9fbb78e7634fbaeabb9dcacd424, type: 3}
   Animator: {fileID: 9100000, guid: d12942b048896a447945a2af1dd4399d, type: 2}
   CharacterName: CAPTAIN AMERICA
-  heroSprite: {fileID: 21300000, guid: 3d982f07acaef244a90304f252ecc785, type: 3}
+  heroSprite: {fileID: 21300000, guid: af1c8f895fd6c0c43afde784b7eebb07, type: 3}

@@ -17,4 +17,4 @@ MonoBehaviour:
   Model: {fileID: 919132149155446097, guid: b06a3c488dbbec54a9f9473d11adc3a9, type: 3}
   Animator: {fileID: 9100000, guid: 6557193b99d9e71468a681c5e1be3553, type: 2}
   CharacterName: DEADPOOL
-  heroSprite: {fileID: 21300000, guid: a4782e3f969a01843a78e487e4aa5742, type: 3}
+  heroSprite: {fileID: 21300000, guid: c75949d20b5a07447b51ca937c5f1838, type: 3}

@@ -17,4 +17,4 @@ MonoBehaviour:
   Model: {fileID: 919132149155446097, guid: 7ef461d7e2cef1d4da70d52aeba1be98, type: 3}
   Animator: {fileID: 9100000, guid: 3094884ab4a041f4ba4ab6bbb1690fe2, type: 2}
   CharacterName: IRON MAN
-  heroSprite: {fileID: 21300000, guid: d5e3aee91c6b42242b46654057a6fef3, type: 3}
+  heroSprite: {fileID: 21300000, guid: fcbf48df90d8a3e4486d4ab8486d9fde, type: 3}
