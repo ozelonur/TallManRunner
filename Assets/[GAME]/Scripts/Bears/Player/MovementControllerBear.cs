@@ -113,19 +113,13 @@ namespace _GAME_.Scripts.Bears
             {
                 Register(CustomEvents.CanMoveHorizontal, CanMoveHorizontal);
                 Register(CustomEvents.OnFinishLine, OnFinishLine);
-                Register(GameEvents.OnGameStart, OnGameStart);
             }
 
             else
             {
                 UnRegister(CustomEvents.CanMoveHorizontal, CanMoveHorizontal);
                 UnRegister(CustomEvents.OnFinishLine, OnFinishLine);
-                UnRegister(GameEvents.OnGameStart, OnGameStart);
             }
-        }
-
-        private void OnGameStart(object[] args)
-        {
         }
 
         private void OnFinishLine(object[] args)
@@ -149,23 +143,20 @@ namespace _GAME_.Scripts.Bears
 
         private void Rotate()
         {
-            if (!_canRotate)
+            _currentRotation = rotationPivot.rotation;
+            _newYRotation = 0;
+
+            if (!_canRotate || !_canMove)
             {
                 return;
             }
 
-            _currentRotation = rotationPivot.rotation;
-            _newYRotation = 0;
-
             _currentRotation.y = _newYRotation;
-
-            _newYRotation = Mathf.Clamp(_currentRotation.y + (_deltaHorizontalValue * _rotationPower),
+            _newYRotation = Mathf.Clamp(_currentRotation.y + _deltaHorizontalValue * _rotationPower,
                 -_rotationClampRange, _rotationClampRange);
-
             _currentRotation.y = _newYRotation;
-
-            rotationPivot.localRotation = Quaternion.Lerp(rotationPivot.localRotation, _currentRotation,
-                _rotationSpeed * Time.deltaTime);
+            rotationPivot.localRotation =
+                Quaternion.Lerp(rotationPivot.localRotation, _currentRotation, Time.deltaTime * _rotationSpeed);
         }
 
         private void Move()

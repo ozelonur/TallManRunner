@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 397caab18aa74427aa7092b6715d01ff, type: 3}
   m_Name: Settings
   m_EditorClassIdentifier: 
-  forwardSpeed: 4
-  horizontalSpeed: 0.3
-  horizontalClampRange: 4
-  rotationSpeed: 0.5
-  canRotate: 0
+  forwardSpeed: 4.5
+  horizontalSpeed: 0.2
+  horizontalClampRange: 1.8
+  rotationSpeed: 5
+  canRotate: 1
   rotationPower: 1
-  rotationClampRange: 4
+  rotationClampRange: 1

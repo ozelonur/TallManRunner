@@ -2,7 +2,6 @@
 // Developed by Onur ÖZEL
 #endregion
 
-using System;
 using DG.Tweening;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -13,7 +12,7 @@ namespace _GAME_.Scripts
     {
         private void Start()
         {
-            DOVirtual.DelayedCall(6f, () =>
+            DOVirtual.DelayedCall(2f, () =>
             {
                 SceneManager.LoadScene(1);
             });

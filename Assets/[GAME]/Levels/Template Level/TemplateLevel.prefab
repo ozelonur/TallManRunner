@@ -658,7 +658,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pathCreator: {fileID: 1499841574785628457}
-  followTarget: {fileID: 3500829381092686641}
+  followTarget: {fileID: 7150650869359394428}
   endOfPathInstruction: 2
   maximumStackLimit: 0
 --- !u!1001 &328018061540147056
@@ -3462,9 +3462,9 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b4cdc7becd1551547b7ae5392f91018e, type: 3}
---- !u!4 &3500829381092686641 stripped
+--- !u!4 &7150650869359394428 stripped
 Transform:
-  m_CorrespondingSourceObject: {fileID: 5053546558370910737, guid: b4cdc7becd1551547b7ae5392f91018e,
+  m_CorrespondingSourceObject: {fileID: 1551642918809114460, guid: b4cdc7becd1551547b7ae5392f91018e,
     type: 3}
   m_PrefabInstance: {fileID: 8553668403361949984}
   m_PrefabAsset: {fileID: 0}
