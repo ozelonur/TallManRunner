@@ -47,7 +47,6 @@ namespace _ORANGEBEAR_.Scripts.Bears
 
         protected virtual void Awake()
         {
-            tapToPlayText.enabled = true;
             startButton.onClick.AddListener(StartGame);
             retryButton.onClick.AddListener(NextLevel);
             nextButton.onClick.AddListener(NextLevel);
@@ -85,6 +84,8 @@ namespace _ORANGEBEAR_.Scripts.Bears
 
         protected virtual void InitLevel(object[] args)
         {
+            
+            tapToPlayText.enabled = true;
             Activate(mainMenuPanel);
         }
 

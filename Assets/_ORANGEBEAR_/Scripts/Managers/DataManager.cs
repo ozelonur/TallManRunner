@@ -25,27 +25,37 @@ namespace _ORANGEBEAR_.Scripts.Managers
 
         #endregion
 
+        #region Private Variables
+
+        private static int ActiveCharacterIndex
+        {
+            get => PlayerPrefs.GetInt("ActiveCharacterIndex", 0);
+            set => PlayerPrefs.SetInt("ActiveCharacterIndex", value);
+        }
+
+        #endregion
+
         #region Datas
 
-        public int DiamondCount
+        public static int DiamondCount
         {
             get => PlayerPrefs.GetInt("DiamondCount", 0);
-            set => PlayerPrefs.SetInt("DiamondCount", value);
+            private set => PlayerPrefs.SetInt("DiamondCount", value);
         }
 
         public int levelDiamondCount;
-        
-        public int CurrentCharacterIndex
+
+        private static int CurrentCharacterIndex
         {
             get => PlayerPrefs.GetInt("CurrentCharacter", 0);
             set => PlayerPrefs.SetInt("CurrentCharacter", value);
         }
 
         #endregion
-        
+
         #region Public Variables
 
-        public CharacterData[] CharacterDatas;
+        public CharacterData[] characterDatas;
 
         #endregion
 
@@ -62,10 +72,10 @@ namespace _ORANGEBEAR_.Scripts.Managers
             {
                 Destroy(gameObject);
             }
-            
+
             SaveData();
             LoadData();
-            
+
             AddDiamond(initialDiamondsCount);
         }
 
@@ -101,22 +111,22 @@ namespace _ORANGEBEAR_.Scripts.Managers
             DiamondCount += amount;
             Roar(CustomEvents.UpdateCurrency, DiamondCount);
         }
-        
+
         public void SubtractDiamond(int amount)
         {
             DiamondCount -= amount;
             Roar(CustomEvents.UpdateCurrency, DiamondCount);
         }
-        
+
         public CharacterData GetCharacterData(int index)
         {
             CurrentCharacterIndex = index;
-            return CharacterDatas[index];
+            return characterDatas[index];
         }
-        
+
         public void SaveData()
         {
-            foreach (var characterData in CharacterDatas)
+            foreach (var characterData in characterDatas)
             {
                 PlayerPrefs.SetInt(characterData.CharacterName, characterData.Unlocked ? 1 : 0);
             }
@@ -124,18 +134,26 @@ namespace _ORANGEBEAR_.Scripts.Managers
 
         public CharacterData GetCurrentCharacter()
         {
-            return CharacterDatas[CurrentCharacterIndex];
+            return characterDatas[CurrentCharacterIndex];
+        }
+
+        public void SetActiveCharacterIndex(int index)
+        {
+            ActiveCharacterIndex = index;
+        }
+        
+        public CharacterData GetActiveModel()
+        {
+           return characterDatas[ActiveCharacterIndex];
         }
 
         #endregion
 
         #region Private Methods
 
-       
-
         private void LoadData()
         {
-            foreach (var characterData in CharacterDatas)
+            foreach (var characterData in characterDatas)
             {
                 characterData.Unlocked = PlayerPrefs.GetInt(characterData.CharacterName, 0) == 1;
             }

@@ -2113,7 +2113,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   initialDiamondsCount: 2
   levelDiamondCount: 0
-  CharacterDatas:
+  characterDatas:
   - {fileID: 11400000, guid: 89ae9d577cabcac4a9d1f4d72643bc50, type: 2}
   - {fileID: 11400000, guid: b0dc7b9efcfe51f488d491652467ae25, type: 2}
   - {fileID: 11400000, guid: 6316796a2a273cc4ab8cbc4473096a0c, type: 2}
@@ -3086,7 +3086,7 @@ AudioSource:
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0

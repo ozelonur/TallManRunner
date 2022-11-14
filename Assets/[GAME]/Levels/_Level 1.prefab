@@ -67,11 +67,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Diamond (13)
       objectReference: {fileID: 0}
-    - target: {fileID: 8791065236678170306, guid: e95fb7825b473b34686280fe19d9b7ae,
-        type: 3}
-      propertyPath: <Worth>k__BackingField
-      value: 5
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e95fb7825b473b34686280fe19d9b7ae, type: 3}
 --- !u!1001 &448763990262358828
@@ -141,11 +136,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Diamond (15)
       objectReference: {fileID: 0}
-    - target: {fileID: 8791065236678170306, guid: e95fb7825b473b34686280fe19d9b7ae,
-        type: 3}
-      propertyPath: <Worth>k__BackingField
-      value: 5
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e95fb7825b473b34686280fe19d9b7ae, type: 3}
 --- !u!1001 &525835567694417556
@@ -214,11 +204,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Diamond (9)
-      objectReference: {fileID: 0}
-    - target: {fileID: 8791065236678170306, guid: e95fb7825b473b34686280fe19d9b7ae,
-        type: 3}
-      propertyPath: <Worth>k__BackingField
-      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e95fb7825b473b34686280fe19d9b7ae, type: 3}
@@ -368,11 +353,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Diamond (7)
       objectReference: {fileID: 0}
-    - target: {fileID: 8791065236678170306, guid: e95fb7825b473b34686280fe19d9b7ae,
-        type: 3}
-      propertyPath: <Worth>k__BackingField
-      value: 5
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e95fb7825b473b34686280fe19d9b7ae, type: 3}
 --- !u!1001 &958380703759138448
@@ -442,11 +422,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Diamond (12)
       objectReference: {fileID: 0}
-    - target: {fileID: 8791065236678170306, guid: e95fb7825b473b34686280fe19d9b7ae,
-        type: 3}
-      propertyPath: <Worth>k__BackingField
-      value: 5
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e95fb7825b473b34686280fe19d9b7ae, type: 3}
 --- !u!1001 &1383152973676624402
@@ -515,11 +490,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Diamond (11)
-      objectReference: {fileID: 0}
-    - target: {fileID: 8791065236678170306, guid: e95fb7825b473b34686280fe19d9b7ae,
-        type: 3}
-      propertyPath: <Worth>k__BackingField
-      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e95fb7825b473b34686280fe19d9b7ae, type: 3}
@@ -712,11 +682,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Diamond (22)
       objectReference: {fileID: 0}
-    - target: {fileID: 8791065236678170306, guid: e95fb7825b473b34686280fe19d9b7ae,
-        type: 3}
-      propertyPath: <Worth>k__BackingField
-      value: 5
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e95fb7825b473b34686280fe19d9b7ae, type: 3}
 --- !u!1001 &1708864867740742175
@@ -859,11 +824,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Diamond (17)
-      objectReference: {fileID: 0}
-    - target: {fileID: 8791065236678170306, guid: e95fb7825b473b34686280fe19d9b7ae,
-        type: 3}
-      propertyPath: <Worth>k__BackingField
-      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e95fb7825b473b34686280fe19d9b7ae, type: 3}
@@ -1082,11 +1042,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Diamond (26)
       objectReference: {fileID: 0}
-    - target: {fileID: 8791065236678170306, guid: e95fb7825b473b34686280fe19d9b7ae,
-        type: 3}
-      propertyPath: <Worth>k__BackingField
-      value: 5
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e95fb7825b473b34686280fe19d9b7ae, type: 3}
 --- !u!1001 &2596973906217960847
@@ -1156,11 +1111,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Diamond
       objectReference: {fileID: 0}
-    - target: {fileID: 8791065236678170306, guid: e95fb7825b473b34686280fe19d9b7ae,
-        type: 3}
-      propertyPath: <Worth>k__BackingField
-      value: 5
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e95fb7825b473b34686280fe19d9b7ae, type: 3}
 --- !u!1001 &2625988894395604296
@@ -1229,11 +1179,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Diamond (3)
-      objectReference: {fileID: 0}
-    - target: {fileID: 8791065236678170306, guid: e95fb7825b473b34686280fe19d9b7ae,
-        type: 3}
-      propertyPath: <Worth>k__BackingField
-      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e95fb7825b473b34686280fe19d9b7ae, type: 3}
@@ -1383,11 +1328,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Diamond (28)
       objectReference: {fileID: 0}
-    - target: {fileID: 8791065236678170306, guid: e95fb7825b473b34686280fe19d9b7ae,
-        type: 3}
-      propertyPath: <Worth>k__BackingField
-      value: 5
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e95fb7825b473b34686280fe19d9b7ae, type: 3}
 --- !u!1001 &4405087319416343025
@@ -1456,11 +1396,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Diamond (27)
-      objectReference: {fileID: 0}
-    - target: {fileID: 8791065236678170306, guid: e95fb7825b473b34686280fe19d9b7ae,
-        type: 3}
-      propertyPath: <Worth>k__BackingField
-      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e95fb7825b473b34686280fe19d9b7ae, type: 3}
@@ -1531,11 +1466,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Diamond (19)
       objectReference: {fileID: 0}
-    - target: {fileID: 8791065236678170306, guid: e95fb7825b473b34686280fe19d9b7ae,
-        type: 3}
-      propertyPath: <Worth>k__BackingField
-      value: 5
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e95fb7825b473b34686280fe19d9b7ae, type: 3}
 --- !u!1001 &4997479472639668070
@@ -1604,11 +1534,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Diamond (10)
-      objectReference: {fileID: 0}
-    - target: {fileID: 8791065236678170306, guid: e95fb7825b473b34686280fe19d9b7ae,
-        type: 3}
-      propertyPath: <Worth>k__BackingField
-      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e95fb7825b473b34686280fe19d9b7ae, type: 3}
@@ -1896,11 +1821,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Diamond (29)
       objectReference: {fileID: 0}
-    - target: {fileID: 8791065236678170306, guid: e95fb7825b473b34686280fe19d9b7ae,
-        type: 3}
-      propertyPath: <Worth>k__BackingField
-      value: 5
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e95fb7825b473b34686280fe19d9b7ae, type: 3}
 --- !u!1001 &5717173687372744483
@@ -1969,11 +1889,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Diamond (20)
-      objectReference: {fileID: 0}
-    - target: {fileID: 8791065236678170306, guid: e95fb7825b473b34686280fe19d9b7ae,
-        type: 3}
-      propertyPath: <Worth>k__BackingField
-      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e95fb7825b473b34686280fe19d9b7ae, type: 3}
@@ -2044,11 +1959,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Diamond (1)
       objectReference: {fileID: 0}
-    - target: {fileID: 8791065236678170306, guid: e95fb7825b473b34686280fe19d9b7ae,
-        type: 3}
-      propertyPath: <Worth>k__BackingField
-      value: 5
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e95fb7825b473b34686280fe19d9b7ae, type: 3}
 --- !u!1001 &6299233148936814266
@@ -2117,11 +2027,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Diamond (5)
-      objectReference: {fileID: 0}
-    - target: {fileID: 8791065236678170306, guid: e95fb7825b473b34686280fe19d9b7ae,
-        type: 3}
-      propertyPath: <Worth>k__BackingField
-      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e95fb7825b473b34686280fe19d9b7ae, type: 3}
@@ -2271,11 +2176,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Diamond (23)
       objectReference: {fileID: 0}
-    - target: {fileID: 8791065236678170306, guid: e95fb7825b473b34686280fe19d9b7ae,
-        type: 3}
-      propertyPath: <Worth>k__BackingField
-      value: 5
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e95fb7825b473b34686280fe19d9b7ae, type: 3}
 --- !u!1001 &6638946339060228130
@@ -2344,11 +2244,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Diamond (16)
-      objectReference: {fileID: 0}
-    - target: {fileID: 8791065236678170306, guid: e95fb7825b473b34686280fe19d9b7ae,
-        type: 3}
-      propertyPath: <Worth>k__BackingField
-      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e95fb7825b473b34686280fe19d9b7ae, type: 3}
@@ -2419,11 +2314,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Diamond (2)
       objectReference: {fileID: 0}
-    - target: {fileID: 8791065236678170306, guid: e95fb7825b473b34686280fe19d9b7ae,
-        type: 3}
-      propertyPath: <Worth>k__BackingField
-      value: 5
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e95fb7825b473b34686280fe19d9b7ae, type: 3}
 --- !u!1001 &7183696561783389550
@@ -2493,11 +2383,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Diamond (14)
       objectReference: {fileID: 0}
-    - target: {fileID: 8791065236678170306, guid: e95fb7825b473b34686280fe19d9b7ae,
-        type: 3}
-      propertyPath: <Worth>k__BackingField
-      value: 5
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e95fb7825b473b34686280fe19d9b7ae, type: 3}
 --- !u!1001 &7185913191021965852
@@ -2566,11 +2451,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Diamond (4)
-      objectReference: {fileID: 0}
-    - target: {fileID: 8791065236678170306, guid: e95fb7825b473b34686280fe19d9b7ae,
-        type: 3}
-      propertyPath: <Worth>k__BackingField
-      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e95fb7825b473b34686280fe19d9b7ae, type: 3}
@@ -2710,11 +2590,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Diamond (21)
       objectReference: {fileID: 0}
-    - target: {fileID: 8791065236678170306, guid: e95fb7825b473b34686280fe19d9b7ae,
-        type: 3}
-      propertyPath: <Worth>k__BackingField
-      value: 5
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e95fb7825b473b34686280fe19d9b7ae, type: 3}
 --- !u!1001 &7747563526858528729
@@ -2783,11 +2658,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Diamond (25)
-      objectReference: {fileID: 0}
-    - target: {fileID: 8791065236678170306, guid: e95fb7825b473b34686280fe19d9b7ae,
-        type: 3}
-      propertyPath: <Worth>k__BackingField
-      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e95fb7825b473b34686280fe19d9b7ae, type: 3}
@@ -2858,11 +2728,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Diamond (6)
       objectReference: {fileID: 0}
-    - target: {fileID: 8791065236678170306, guid: e95fb7825b473b34686280fe19d9b7ae,
-        type: 3}
-      propertyPath: <Worth>k__BackingField
-      value: 5
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e95fb7825b473b34686280fe19d9b7ae, type: 3}
 --- !u!1001 &8879414799200627259
@@ -2931,11 +2796,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Diamond (24)
-      objectReference: {fileID: 0}
-    - target: {fileID: 8791065236678170306, guid: e95fb7825b473b34686280fe19d9b7ae,
-        type: 3}
-      propertyPath: <Worth>k__BackingField
-      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e95fb7825b473b34686280fe19d9b7ae, type: 3}
@@ -3006,11 +2866,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Diamond (8)
       objectReference: {fileID: 0}
-    - target: {fileID: 8791065236678170306, guid: e95fb7825b473b34686280fe19d9b7ae,
-        type: 3}
-      propertyPath: <Worth>k__BackingField
-      value: 5
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e95fb7825b473b34686280fe19d9b7ae, type: 3}
 --- !u!1001 &9125718691348954762
@@ -3079,11 +2934,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Diamond (18)
-      objectReference: {fileID: 0}
-    - target: {fileID: 8791065236678170306, guid: e95fb7825b473b34686280fe19d9b7ae,
-        type: 3}
-      propertyPath: <Worth>k__BackingField
-      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e95fb7825b473b34686280fe19d9b7ae, type: 3}

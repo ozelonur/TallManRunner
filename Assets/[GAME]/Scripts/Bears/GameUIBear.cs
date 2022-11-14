@@ -136,24 +136,25 @@ namespace _GAME_.Scripts.Bears
             IEnumerator WaitOneFrame()
             {
                 yield return null;
-                currentCharacterImage.sprite = DataManager.Instance.GetCurrentCharacter().heroSprite;
+                currentCharacterImage.sprite = DataManager.Instance.GetActiveModel().heroSprite;
             }
         }
 
         private void OnClickBuy()
         {
-            if (DataManager.Instance.CharacterDatas[_index].Unlocked)
+            if (DataManager.Instance.characterDatas[_index].Unlocked)
             {
+                DataManager.Instance.SetActiveCharacterIndex(_index);
                 Roar(CustomEvents.SwitchCharacter);
                 return;
             }
 
-            if (DataManager.Instance.DiamondCount < DataManager.Instance.CharacterDatas[_index].Price)
+            if (DataManager.DiamondCount < DataManager.Instance.characterDatas[_index].Price)
             {
                 return;
             }
 
-            DataManager.Instance.SubtractDiamond(DataManager.Instance.CharacterDatas[_index].Price);
+            DataManager.Instance.SubtractDiamond(DataManager.Instance.characterDatas[_index].Price);
 
             Unlock();
         }
@@ -309,7 +310,7 @@ namespace _GAME_.Scripts.Bears
 
         private void Unlock()
         {
-            DataManager.Instance.CharacterDatas[_index].Unlocked = true;
+            DataManager.Instance.characterDatas[_index].Unlocked = true;
             GetCharacterData();
 
             DataManager.Instance.SaveData();

@@ -69,7 +69,7 @@ namespace _GAME_.Scripts.Bears.Player
                 Destroy(_tempCharacter);
             }
             
-            _tempCharacter = Instantiate(DataManager.Instance.GetCurrentCharacter().Model, modelParent);
+            _tempCharacter = Instantiate(DataManager.Instance.GetActiveModel().Model, modelParent);
             Animator animator = _tempCharacter.AddComponent<Animator>();
             animator.runtimeAnimatorController = _playerBear.CharacterData.Animator;
             
