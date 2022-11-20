@@ -121,6 +121,7 @@ namespace _GAME_.Scripts.Bears
 
         private void DiamondRewarded(bool arg0)
         {
+            watchAdsButton.gameObject.SetActive(false);
             DataManager.Instance.AddDiamond(50);
         }
 
@@ -228,6 +229,7 @@ namespace _GAME_.Scripts.Bears
                 Register(CustomEvents.SwitchCharacter, SwitchCharacter);
                 Register(GameEvents.OnGameComplete, OnGameComplete);
                 Register(CustomEvents.GiveInfo, GiveInfo);
+                Register(GameEvents.OnGameStart, OnGameStart);
             }
 
             else
@@ -236,7 +238,13 @@ namespace _GAME_.Scripts.Bears
                 UnRegister(CustomEvents.SwitchCharacter, SwitchCharacter);
                 UnRegister(GameEvents.OnGameComplete, OnGameComplete);
                 UnRegister(CustomEvents.GiveInfo, GiveInfo);
+                UnRegister(GameEvents.OnGameStart, OnGameStart);
             }
+        }
+
+        private void OnGameStart(object[] args)
+        {
+            watchAdsButton.gameObject.SetActive(true);
         }
 
         private void GiveInfo(object[] args)

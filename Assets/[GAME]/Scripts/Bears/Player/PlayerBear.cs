@@ -4,6 +4,7 @@
 
 #endregion
 
+using System;
 using _GAME_.Scripts.Datas;
 using _GAME_.Scripts.Enums;
 using _GAME_.Scripts.GlobalVariables;
@@ -26,6 +27,11 @@ namespace _GAME_.Scripts.Bears.Player
         #endregion
 
         #region MonoBehaviour Methods
+
+        private void Awake()
+        {
+            playerInitializer = GetComponent<PlayerInitializer>();
+        }
 
         private void Start()
         {

@@ -46,7 +46,7 @@ namespace _GAME_.Scripts.Bears.Player
 
             else
             {
-                UnRegister(CustomEvents.SwitchCamera, SwitchCharacter);
+                UnRegister(CustomEvents.SwitchCharacter, SwitchCharacter);
             }
         }
 

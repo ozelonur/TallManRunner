@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Settings
   m_EditorClassIdentifier: 
   forwardSpeed: 4.5
-  horizontalSpeed: 0.2
+  horizontalSpeed: 0.4
   horizontalClampRange: 1.8
   rotationSpeed: 5
   canRotate: 1
